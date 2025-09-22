@@ -1,1 +1,24 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/hYNg64gz)
+# iceTaskTwo — Android + Auth + Biometric + Backend
+
+This zip contains:
+- **Android** app (Kotlin) with **Google SSO (Firebase Auth)** and **BiometricPrompt**.
+- **Retrofit** client consuming your MemeStream REST API.
+- **Bundled backend** from Task One under `MemeStream/01-RestfulAPI`.
+
+## Setup (Android)
+1. Open `Android/` in Android Studio (Giraffe+).
+2. Add your **Firebase** config file:
+   - Download `google-services.json` from Firebase Console and place it at: `Android/app/google-services.json`.
+   - In Firebase, enable **Google** provider in Authentication.
+   - Copy the **Web client ID** into `strings.xml` as `default_web_client_id` (create if missing).
+3. Update API base URL in `ApiClient.kt` if deploying remotely.
+4. Run the app: first login with Google, then you can use biometrics for quick re-entry.
+
+## Setup (Backend)
+- The Node/Express API is in `MemeStream/01-RestfulAPI`.
+- `npm install`, set `.env`, `npm start`.
+- From Android emulator, use `http://10.0.2.2:8080/` to access local backend.
+
+## Notes
+- Min SDK 23; uses `androidx.biometric`.
+- Replace placeholders and add icons as needed.
